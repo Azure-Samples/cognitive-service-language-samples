@@ -22,5 +22,5 @@ This project framework provides the following features:
 
 | Sample | Description |
 | ---------- | -------- | 
-| [CoreBotWithCLU](https://github.com/Azure-Samples/cognitive-service-language-samples/CoreBotWithCLU) | A sample demonstrating Conversational language understanding integration with the Bot Framework SDK. |
+| [CoreBotWithCLU](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/CoreBotWithCLU) | A sample demonstrating Conversational language understanding integration with the Bot Framework SDK. |
 | [OrchestrationSample]() | A sample demonstrating an Orchestration workflow solution integration with the SDK.  |
