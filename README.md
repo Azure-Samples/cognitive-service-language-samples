@@ -1,14 +1,6 @@
 # Sample Repository for Cognitive Service for Language
 
-This project hosts **samples** for [Cognitive Service for Language](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/). 
-
-## Features
-
-This project framework provides the following features:
-
-* A sample demonstrating Conversational language understanding integration with the Bot Framework SDK.
-* A sample demonstrating an Orchestration workflow solution integration with the SDK. 
-
+This project hosts **samples** for [Cognitive Service for Language](https://docs.microsoft.com/en-us/azure/cognitive-services/language-service/).
 
 ## Getting Started
 
