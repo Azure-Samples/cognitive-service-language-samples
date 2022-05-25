@@ -4,7 +4,7 @@ This project hosts **samples** for [Cognitive Service for Language](https://docs
 
 ## Getting Started
 
-* The easiest way to use these samples without using Git is to download the current version as a [ZIP file](https://github.com/Azure-Samples/cognitive-service-language-samples/archive/main.zip).
+* The easiest way to use these samples without using Git is to download the current version as a [ZIP file](https://github.com/Azure-Samples/cognitive-service-language-samples/archive/refs/heads/main.zip).
 
   * Be sure to unzip the entire archive, and not just individual samples.
 
