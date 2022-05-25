@@ -1,0 +1,173 @@
+{
+    "api-version": "2022-03-01-preview",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "conversation",
+        "settings": {
+            "confidenceThreshold": 0
+        },
+        "projectName": "EmailProject",
+        "multilingual": true,
+        "description": "An email commands sample project",
+        "language": "en-us"
+    },
+    "assets": {
+        "intents": [
+            {
+                "category": "Read"
+            },
+            {
+                "category": "Delete"
+            },
+            {
+                "category": "Attach"
+            },
+            {
+                "category": "None"
+            }
+        ],
+        "entities": [
+            {
+                "category": "Sender",
+                "compositionSetting": "returnUnion",
+                "prebuilts": [
+                    {
+                        "category": "Person.Name"
+                    }
+                ]
+            },
+            {
+                "category": "FileName",
+                "compositionSetting": "returnUnion"
+            },
+            {
+                "category": "FileType",
+                "compositionSetting": "returnUnion"
+            }
+        ],
+        "utterances": [
+            {
+                "text": "Open Blake's email",
+                "language": "en-us",
+                "intent": "Read",
+                "entities": [
+                    {
+                        "category": "Sender",
+                        "offset": 5,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Add the PDF file with the name signed contract",
+                "language": "en-us",
+                "intent": "Attach",
+                "entities": [
+                    {
+                        "category": "FileType",
+                        "offset": 8,
+                        "length": 3
+                    },
+                    {
+                        "category": "FileName",
+                        "offset": 31,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Attach the PowerPoint file",
+                "language": "en-us",
+                "intent": "Attach",
+                "entities": [
+                    {
+                        "category": "FileType",
+                        "offset": 11,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Attach the excel file called reports q1",
+                "language": "en-us",
+                "intent": "Attach",
+                "entities": [
+                    {
+                        "category": "FileType",
+                        "offset": 11,
+                        "length": 5
+                    },
+                    {
+                        "category": "FileName",
+                        "offset": 29,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Move this to the deleted folder",
+                "language": "en-us",
+                "intent": "Delete",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Remove this one",
+                "language": "en-us",
+                "intent": "Delete",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Delete this",
+                "language": "en-us",
+                "intent": "Delete",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Delete my last email from Martha",
+                "language": "en-us",
+                "intent": "Delete",
+                "entities": [
+                    {
+                        "category": "Sender",
+                        "offset": 26,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Read John's email for me",
+                "language": "en-us",
+                "intent": "Read",
+                "entities": [
+                    {
+                        "category": "Sender",
+                        "offset": 5,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "read the email from Carol",
+                "language": "en-us",
+                "intent": "Read",
+                "entities": [
+                    {
+                        "category": "Sender",
+                        "offset": 20,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            }
+        ]
+    }
+}
