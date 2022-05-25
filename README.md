@@ -14,4 +14,4 @@ This project hosts **samples** for [Cognitive Service for Language](https://docs
 | Sample | Description |
 | ---------- | -------- | 
 | [CoreBotWithCLU](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/CoreBotWithCLU) | A sample demonstrating Conversational language understanding integration with the Bot Framework SDK. |
-| [OrchestrationSample]() | A sample demonstrating an Orchestration workflow solution integration with the SDK.  |
+| [OrchestrationWorkflowSample](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/OrchestrationWorkflowSample) | A sample demonstrating an Orchestration workflow solution integration with the Conversations SDK.  |
