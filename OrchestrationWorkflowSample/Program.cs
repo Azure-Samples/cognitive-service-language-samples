@@ -1,7 +1,9 @@
-﻿using System;
+using System;
 using System.Linq;
+using System.Text.Json;
 using Azure;
 using Azure.AI.Language.Conversations;
+using Azure.Core;
 
 namespace OrchestrationWorkflowSample
 {
@@ -16,80 +18,106 @@ namespace OrchestrationWorkflowSample
             ConversationAnalysisClient client = new ConversationAnalysisClient(endpoint, credential);
 
             //Provide project information
-            ConversationsProject orchestrationProject = new ConversationsProject("Orchestrator", "Testing");
+            string projectName = "";
+            string deploymentName = "";
 
             Console.WriteLine("Input a query to your orchestration project:");
             
             string query = Console.ReadLine();
 
-            Response<AnalyzeConversationTaskResult> response = client.AnalyzeConversation(
-                query,
-                orchestrationProject);
-            
-            CustomConversationalTaskResult customConversationalTaskResult = response.Value as CustomConversationalTaskResult;
-            var orchestratorPrediction = customConversationalTaskResult.Results.Prediction as OrchestratorPrediction;
+            var data = new
+            {
+                analysisInput = new
+                {
+                    conversationItem = new
+                    {
+                        text = query,
+                        id = "1",
+                        participantId = "1",
+                    }
+                },
+                parameters = new
+                {
+                    projectName,
+                    deploymentName,
 
-            Console.WriteLine($"The top intent was {orchestratorPrediction.TopIntent}\n");
+                    // Use Utf16CodeUnit for strings in .NET.
+                    stringIndexType = "Utf16CodeUnit",
+                },
+                kind = "Conversation",
+            };
+
+            Response response = client.AnalyzeConversation(RequestContent.Create(data));
+
+            using JsonDocument result = JsonDocument.Parse(response.ContentStream);
+
+            JsonElement conversationalTaskResult = result.RootElement;
+            JsonElement orchestrationPrediction = conversationalTaskResult.GetProperty("result").GetProperty("prediction");
+
+            string topIntent = orchestrationPrediction.GetProperty("topIntent").GetString();
+
+            Console.WriteLine($"The top intent was {topIntent}\n");
             Console.WriteLine($"The result from the connected project is as follows:\n");
 
-            TargetIntentResult targetIntentResult = orchestratorPrediction.Intents[orchestratorPrediction.TopIntent];
+            JsonElement targetIntentResult = orchestrationPrediction.GetProperty("intents").GetProperty(topIntent);
 
+            //Conversational language understanding response
+            if (targetIntentResult.GetProperty("targetProjectKind").GetString() == "Conversation")
+            {
 
-            if(targetIntentResult.TargetKind == TargetKind.Conversation)
-{
-                ConversationTargetIntentResult cluTargetIntentResult = targetIntentResult as ConversationTargetIntentResult;
+                JsonElement conversationPrediction = targetIntentResult.GetProperty("result").GetProperty("prediction");
 
-                ConversationResult conversationResult = cluTargetIntentResult.Result;
-                ConversationPrediction conversationPrediction = conversationResult.Prediction;
-
-                Console.WriteLine($"\tTop Intent: {conversationResult.Prediction.TopIntent}");
+                Console.WriteLine($"\tTop Intent: {conversationPrediction.GetProperty("topIntent").GetString()}");
                 Console.WriteLine($"\tIntents:");
-                foreach (ConversationIntent intent in conversationPrediction.Intents)
+                foreach (JsonElement intent in conversationPrediction.GetProperty("intents").EnumerateArray())
                 {
-                    Console.WriteLine($"\t\tIntent Category: {intent.Category}");
-                    Console.WriteLine($"\t\tConfidence: {intent.Confidence}");
+                    Console.WriteLine($"\t\tCategory: {intent.GetProperty("category").GetString()}");
+                    Console.WriteLine($"\t\tConfidence: {intent.GetProperty("confidenceScore").GetSingle()}");
                     Console.WriteLine();
                 }
 
                 Console.WriteLine($"\tEntities:");
-                foreach (ConversationEntity entity in conversationPrediction.Entities)
+                foreach (JsonElement entity in conversationPrediction.GetProperty("entities").EnumerateArray())
                 {
-                    Console.WriteLine($"\t\tEntity Text: {entity.Text}");
-                    Console.WriteLine($"\t\tEntity Category: {entity.Category}");
-                    Console.WriteLine($"\t\tConfidence: {entity.Confidence}");
-                    Console.WriteLine($"\t\tStarting Position: {entity.Offset}");
-                    Console.WriteLine($"\t\tLength: {entity.Length}");
+                    Console.WriteLine($"\t\tCategory: {entity.GetProperty("category").GetString()}");
+                    Console.WriteLine($"\t\tText: {entity.GetProperty("text").GetString()}");
+                    Console.WriteLine($"\t\tOffset: {entity.GetProperty("offset").GetInt32()}");
+                    Console.WriteLine($"\t\tLength: {entity.GetProperty("length").GetInt32()}");
+                    Console.WriteLine($"\t\tConfidence: {entity.GetProperty("confidenceScore").GetSingle()}");
                     Console.WriteLine();
 
-                    foreach (BaseResolution resolution in entity.Resolutions)
+                    if (entity.TryGetProperty("resolutions", out JsonElement resolutions))
                     {
-                        if (resolution is DateTimeResolution dateTimeResolution)
+                        foreach (JsonElement resolution in resolutions.EnumerateArray())
                         {
-                            Console.WriteLine($"\t\t\tDatetime Sub Kind: {dateTimeResolution.DateTimeSubKind}");
-                            Console.WriteLine($"\t\t\tTimex: {dateTimeResolution.Timex}");
-                            Console.WriteLine($"\t\t\tValue: {dateTimeResolution.Value}");
-                            Console.WriteLine();
+                            if (resolution.GetProperty("resolutionKind").GetString() == "DateTimeResolution")
+                            {
+                                Console.WriteLine($"\t\t\tDatetime Sub Kind: {resolution.GetProperty("dateTimeSubKind").GetString()}");
+                                Console.WriteLine($"\t\t\tTimex: {resolution.GetProperty("timex").GetString()}");
+                                Console.WriteLine($"\t\t\tValue: {resolution.GetProperty("value").GetString()}");
+                                Console.WriteLine();
+                            }
                         }
                     }
                 }
             }
 
-            else if (targetIntentResult.TargetKind == TargetKind.QuestionAnswering)
+            //Custom question answering response
+            else if (targetIntentResult.GetProperty("targetProjectKind").GetString() == "QuestionAnswering")
             {
-                QuestionAnsweringTargetIntentResult qnaTargetIntentResult = targetIntentResult as QuestionAnsweringTargetIntentResult;
+                JsonElement questionAnsweringResponse = targetIntentResult.GetProperty("result");
 
-                KnowledgeBaseAnswers qnaAnswers = qnaTargetIntentResult.Result;
 
                 Console.WriteLine("\tAnswers: \n");
-                foreach (KnowledgeBaseAnswer answer in qnaAnswers.Answers)
+                foreach (JsonElement answer in questionAnsweringResponse.GetProperty("answers").EnumerateArray())
                 {
-                    Console.WriteLine($"\t\tAnswer: {answer.Answer}");
-                    Console.WriteLine($"\t\tConfidence: {answer.Confidence}");
-                    Console.WriteLine($"\t\tSource: {answer.Source}");
+                    Console.WriteLine($"\t\t{answer.GetProperty("answer").GetString()}");
+                    Console.WriteLine($"\t\tConfidence: {answer.GetProperty("confidenceScore")}");
+                    Console.WriteLine($"\t\tSource: {answer.GetProperty("source")}");
                     Console.WriteLine();
                 }
-            }
 
+            }
 
             Console.ReadKey();
         }
