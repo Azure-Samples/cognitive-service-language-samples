@@ -12,11 +12,6 @@ namespace Microsoft.BotBuilderSamples.Clu
     public class CluOptions
     {
         /// <summary>
-        /// The version of the api to use.
-        /// </summary>
-        public ConversationAnalysisClientOptions.ServiceVersion ApiVersion = ConversationAnalysisClientOptions.ServiceVersion.V2021_11_01_Preview;
-
-        /// <summary>
         /// Creates an instance of  <see cref="CluOptions"/> containing the CLU Application as well as optional configurations.
         /// </summary>
         public CluOptions(CluApplication app)
@@ -48,10 +43,5 @@ namespace Microsoft.BotBuilderSamples.Clu
         /// The name of the target project this request is sending to directly.
         /// </summary>
         public string DirectTarget { get; set; }
-
-        /// <summary>
-        /// A dictionary representing the input for each target project.
-        /// </summary>
-        public IDictionary<string, AnalysisParameters> Parameters { get; }
     }
 }

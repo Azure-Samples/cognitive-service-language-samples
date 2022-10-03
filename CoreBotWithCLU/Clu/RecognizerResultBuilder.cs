@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using Azure.AI.Language.Conversations;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -39,57 +40,23 @@ namespace Microsoft.BotBuilderSamples.Clu
             "state"
         };
 
-        public static RecognizerResult BuildRecognizerResultFromCluResponse(AnalyzeConversationResult cluResult, string utterance)
+        public static RecognizerResult BuildRecognizerResultFromCluResponse(JsonDocument cluResult, string utterance)
         {
+
+            JsonElement conversationalTaskResult = cluResult.RootElement;
+            JsonElement conversationPrediction = conversationalTaskResult.GetProperty("result").GetProperty("prediction");
+
+
             var recognizerResult = new RecognizerResult
             {
                 Text = utterance,
-                AlteredText = cluResult.Query
+                AlteredText = conversationalTaskResult.GetProperty("result").GetProperty("query").GetString()
             };
 
-            // CLU Projects can be Conversation projects (LuisVNext) or Orchestration projects that
-            // can retrieve responses from other types of projects (Question answering, LUIS or Conversations)
-            var projectKind = cluResult.Prediction.ProjectKind;
+            UpdateRecognizerResultFromConversations(conversationPrediction, recognizerResult);
+            
 
-            if (projectKind == ProjectKind.Conversation)
-            {
-                UpdateRecognizerResultFromConversations((ConversationPrediction)cluResult.Prediction, recognizerResult);
-            }
-            else
-            {
-                // workflow projects can return results from LUIS, Conversations or QuestionAnswering Projects
-                var orchestrationPrediction = (OrchestratorPrediction)cluResult.Prediction;
-
-                // finding name of the target project, then finding the target project type
-                var respondingProjectName = orchestrationPrediction.TopIntent;
-                var targetIntentResult = orchestrationPrediction.Intents[respondingProjectName];
-
-                // targetIntentResult.TargetKind is currently internal but will be changed in next version.
-                // GetType() is used temporarily.
-
-                // var targetKind = targetIntentResult.TargetKind;
-                var targetKind = targetIntentResult.GetType().Name;
-
-                switch (targetKind)
-                {
-                    case "ConversationTargetIntentResult":
-                        var conversationTargetIntentResult = (ConversationTargetIntentResult)targetIntentResult;
-                        UpdateRecognizerResultFromConversations(conversationTargetIntentResult.Result.Prediction, recognizerResult);
-                        break;
-
-                    case "LuisTargetIntentResult":
-                        var luisTargetIntentResult = (LuisTargetIntentResult)targetIntentResult;
-                        UpdateRecognizerResultFromLuis(luisTargetIntentResult, recognizerResult);
-                        break;
-
-                    case "QuestionAnsweringTargetIntentResult":
-                        var questionAnsweringTargetIntentResult = (QuestionAnsweringTargetIntentResult)targetIntentResult;
-                        UpdateRecognizerResultFromQuestionAnswering(questionAnsweringTargetIntentResult, recognizerResult);
-                        break;
-                }
-            }
-
-            AddProperties(cluResult, recognizerResult);
+            AddProperties(conversationPrediction, recognizerResult);
 
             return recognizerResult;
         }
@@ -102,115 +69,43 @@ namespace Microsoft.BotBuilderSamples.Clu
         /// Properties: Additional information returned by the service.
         /// 
         /// </summary>
-        private static void UpdateRecognizerResultFromConversations(ConversationPrediction conversationPrediction, RecognizerResult recognizerResult)
+        private static void UpdateRecognizerResultFromConversations(JsonElement conversationPrediction, RecognizerResult recognizerResult)
         {
             recognizerResult.Intents = GetIntents(conversationPrediction);
             recognizerResult.Entities = ExtractEntitiesAndMetadata(conversationPrediction);
         }
 
-        /// <summary>
-        /// Returns a RecognizerResult from a question answering response received by an orchestration project.
-        /// The recognizer result has similar format to the one returned by the QnAMaker Recognizer:
-        /// 
-        /// Intents: Indicates whether an answer has been found and contains the confidence score.
-        /// Entities: has the object: { "answer" : ["topAnswer.answer"] }
-        /// Properties: All answers returned by the Question Answering service.
-        /// 
-        /// </summary>
-        private static void UpdateRecognizerResultFromQuestionAnswering(QuestionAnsweringTargetIntentResult qaResult, RecognizerResult recognizerResult)
-        {
-            var qnaAnswers = qaResult.Result.Answers;
-
-            if (qnaAnswers.Count > 0)
-            {
-                var topAnswer = qnaAnswers[0];
-                foreach (var answer in qnaAnswers)
-                {
-                    if (answer.ConfidenceScore > topAnswer.ConfidenceScore)
-                    {
-                        topAnswer = answer;
-                    }
-                }
-
-                recognizerResult.Intents.Add(CluRecognizer.QuestionAnsweringMatchIntent, new IntentScore {Score = topAnswer.ConfidenceScore});
-
-                var answerArray = new JArray {topAnswer.Answer};
-                ObjectPath.SetPathValue(recognizerResult, "entities.answer", answerArray);
-
-                recognizerResult.Properties["answers"] = qnaAnswers;
-            }
-            else
-            {
-                recognizerResult.Intents.Add("None", new IntentScore {Score = 1.0f});
-            }
-        }
-
-        /// <summary>
-        /// Returns a RecognizerResult from a luis response received by an orchestration project.
-        /// The recognizer result has similar format to the one returned by the LUIS Recognizer:
-        /// 
-        /// Intents: Dictionary with (Intent, confidenceScores) pairs.
-        /// Entities: The Luis entities Object, same as the one returned by the LUIS Recognizer.
-        /// Properties: Sentiment result (if available) as well as the raw luis prediction result.
-        /// </summary>
-        private static void UpdateRecognizerResultFromLuis(LuisTargetIntentResult luisResult, RecognizerResult recognizerResult)
-        {
-            var luisPredictionObject = (JObject)JObject.Parse(luisResult.Result.ToString())["prediction"];
-            recognizerResult.Intents = GetIntents(luisPredictionObject);
-            recognizerResult.Entities = ExtractEntitiesAndMetadata(luisPredictionObject);
-
-            AddProperties(luisPredictionObject, recognizerResult);
-            recognizerResult.Properties.Add("luisResult", luisPredictionObject);
-        }
-
-        private static IDictionary<string, IntentScore> GetIntents(ConversationPrediction prediction)
+        private static IDictionary<string, IntentScore> GetIntents(JsonElement prediction)
         {
             var result = new Dictionary<string, IntentScore>();
-            foreach (var intent in prediction.Intents)
+            foreach (var intent in prediction.GetProperty("intents").EnumerateArray())
             {
-                result.Add(intent.Category, new IntentScore {Score = intent.ConfidenceScore});
+                result.Add(intent.GetProperty("category").GetString(), new IntentScore {Score = intent.GetProperty("confidenceScore").GetSingle()});
             }
 
             return result;
         }
 
-        private static JObject ExtractEntitiesAndMetadata(ConversationPrediction prediction)
+        private static JObject ExtractEntitiesAndMetadata(JsonElement prediction)
         {
-            var entities = prediction.Entities;
-            var entityObject = JsonConvert.SerializeObject(entities);
-            var jsonArray = JArray.Parse(entityObject);
-            var returnedObject = new JObject {{"entities", jsonArray}};
+            var entities = prediction.GetProperty("entities").GetRawText(); // Requires refactoring
+            //var entityObject = JsonConvert.SerializeObject(entities);
+            var jsonArray = JArray.Parse(entities);
+            var returnedObject = new JObject { {"entities", jsonArray } };
 
             return returnedObject;
         }
 
-        private static void AddProperties(AnalyzeConversationResult conversationResult, RecognizerResult result)
+        private static void AddProperties(JsonElement conversationPrediction, RecognizerResult result)
         {
-            var topIntent = conversationResult.Prediction.TopIntent;
-            var projectKind = conversationResult.Prediction.ProjectKind;
-            var detectedLanguage = conversationResult.DetectedLanguage;
+            var topIntent = conversationPrediction.GetProperty("topIntent").GetString();
+            var projectKind = conversationPrediction.GetProperty("projectKind").GetString();
 
             result.Properties.Add("projectKind", projectKind.ToString());
 
             if (topIntent != null)
             {
                 result.Properties.Add("topIntent", topIntent);
-            }
-
-            if (detectedLanguage != null)
-            {
-                result.Properties.Add("detectedLanguage", detectedLanguage);
-            }
-
-            if (projectKind == ProjectKind.Workflow)
-            {
-                var prediction = (OrchestratorPrediction)conversationResult.Prediction;
-                var targetProject = prediction.Intents[prediction.TopIntent];
-
-                // temporarily renamed until next release of CLU SDK
-                // var targetProjectKind = targetProject.TargetKind
-                var targetProjectKind = targetProject.GetType();
-                result.Properties.Add("targetIntentKind", targetProjectKind);
             }
         }
 
