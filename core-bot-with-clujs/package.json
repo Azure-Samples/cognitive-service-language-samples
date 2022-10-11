@@ -1,5 +1,5 @@
 {
-    "name": "CoreBotWithCLUJS",
+    "name": "core-bot-with-clu-js",
     "version": "1.0.0",
     "description": "Bot Framework v4 core bot sample using CLU",
     "author": "Generated using Microsoft Bot Builder Yeoman generator v4.17.0",
@@ -16,6 +16,8 @@
         "url": "https://github.com"
     },
     "dependencies": {
+        "@azure/ai-language-conversations": "^1.0.0-beta.1",
+        "@azure/core-auth": "^1.4.0",
         "@microsoft/recognizers-text-data-types-timex-expression": "1.1.4",
         "botbuilder": "~4.15.0",
         "botbuilder-ai": "~4.15.0",

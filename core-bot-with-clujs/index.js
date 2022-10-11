@@ -6,7 +6,7 @@
 // Import required packages
 const path = require('path');
 
-// Note: Ensure you have a .env file and include LuisAppId, LuisAPIKey and LuisAPIHostName.
+// Note: Ensure you have a .env file and include CluAppId, CluAPIKey and CluAPIHostName.
 const ENV_FILE = path.join(__dirname, '.env');
 require('dotenv').config({ path: ENV_FILE });
 
@@ -85,14 +85,14 @@ const conversationState = new ConversationState(memoryStorage);
 const userState = new UserState(memoryStorage);
 
 // If configured, pass in the FlightBookingRecognizer.  (Defining it externally allows it to be mocked for tests)
-const { LuisAppId, LuisAPIKey, LuisAPIHostName } = process.env;
-const luisConfig = { applicationId: LuisAppId, endpointKey: LuisAPIKey, endpoint: `https://${ LuisAPIHostName }` };
+const { CluAPIKey, CluAPIHostName, CluProjectName, CluDeploymentName } = process.env;
+const cluConfig = { endpointKey: CluAPIKey, endpoint: `https://${ CluAPIHostName }`, projectName: CluProjectName, deploymentName: CluDeploymentName };
 
-const luisRecognizer = new FlightBookingRecognizer(luisConfig);
+const cluRecognizer = new FlightBookingRecognizer(cluConfig);
 
 // Create the main dialog.
 const bookingDialog = new BookingDialog(BOOKING_DIALOG);
-const dialog = new MainDialog(luisRecognizer, bookingDialog);
+const dialog = new MainDialog(cluRecognizer, bookingDialog);
 const bot = new DialogAndWelcomeBot(conversationState, userState, dialog);
 
 // Create HTTP server
