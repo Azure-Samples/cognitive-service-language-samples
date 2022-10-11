@@ -3,7 +3,6 @@
 
 const { TimexProperty } = require('@microsoft/recognizers-text-data-types-timex-expression');
 const { MessageFactory, InputHints } = require('botbuilder');
-const { CluRecognizer } = require('../clu/cluRecognizer');
 const { ComponentDialog, DialogSet, DialogTurnStatus, TextPrompt, WaterfallDialog } = require('botbuilder-dialogs');
 
 const MAIN_WATERFALL_DIALOG = 'mainWaterfallDialog';
@@ -78,7 +77,6 @@ class MainDialog extends ComponentDialog {
 
         // Call CLU and gather any potential booking details. (Note the TurnContext has the response to the prompt)
         const cluResult = await this.cluRecognizer.executeCluQuery(stepContext.context);
-        console.log(cluResult);
         switch (this.cluRecognizer.topIntent(cluResult)) {
         case 'BookFlight': {
             // Extract the values for the composite entities from the CLU result.

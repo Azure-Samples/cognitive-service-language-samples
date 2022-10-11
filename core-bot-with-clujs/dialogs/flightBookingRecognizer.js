@@ -25,30 +25,30 @@ class FlightBookingRecognizer {
 
     getFromEntities(response) {
         var result = response.result.prediction;
-        console.log(result.entities);
-        let fromValue, fromAirportValue;
+        let fromValue;
 
-        for(let entity of result.entities){
-            if (entity.category === "fromCity") {
+        for (const entity of result.entities) {
+            if (entity.category === 'fromCity') {
                 fromValue = entity.text;
             }
         }
 
-        fromAirportValue = fromValue;
+        const fromAirportValue = fromValue;
 
         return { from: fromValue, airport: fromAirportValue };
     }
 
     getToEntities(response) {
         var result = response.result.prediction;
-        let toValue, toAirportValue;
-        for(let entity of result.entities){
-            if (entity.category === "toCity") {
+        let toValue;
+
+        for (const entity of result.entities) {
+            if (entity.category === 'toCity') {
                 toValue = entity.text;
             }
         }
 
-        toAirportValue = toValue;
+        const toAirportValue = toValue;
 
         return { to: toValue, airport: toAirportValue };
     }
@@ -60,11 +60,13 @@ class FlightBookingRecognizer {
     getTravelDate(response) {
         const result = response.result.prediction;
         let datetimeEntity;
-        for(let entity of result.entities){
-            if (entity.category === "flightDate") {
+
+        for (const entity of result.entities) {
+            if (entity.category === 'flightDate') {
                 datetimeEntity = entity.resolutions;
             }
         }
+
         if (!datetimeEntity || !datetimeEntity[0]) return undefined;
 
         const timex = datetimeEntity[0].timex;
@@ -73,7 +75,7 @@ class FlightBookingRecognizer {
         return timex;
     }
 
-    topIntent(response){
+    topIntent(response) {
         return response.result.prediction.topIntent;
     }
 }
