@@ -1,0 +1,1386 @@
+{
+    "projectFileVersion": "2022-05-01",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0.7
+        },
+        "projectName": "MicrosoftPizzaLarge",
+        "multilingual": false,
+        "description": "",
+        "language": "en-us"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "ModifyOrder"
+            },
+            {
+                "category": "None"
+            }
+        ],
+        "entities": [
+            {
+                "category": "FullPizzaOrder",
+                "compositionSetting": "combineComponents"
+            }
+        ],
+        "utterances": [
+            {
+                "text": "a cheese pizza medium with some pineapple and chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 2,
+                        "length": 51
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "add 5 party size marinera pizzas and i will pick them up at 6pm",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 4,
+                        "length": 28
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "awesome",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get 3 pepperoni pizzas and a four cheese pizza with a large house salad and a large fries",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 42
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get a large veggie pizza but can i get it without onions",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 12,
+                        "length": 50
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get a medium cheese pizza with sausage on half and chicken on the other half",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 72
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get a medium pepperoni pizza with extra cheese and mushrooms plus some ranch dip for delivery paying cash",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 57
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get a medium sausage pizza and fries delivered",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 22
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get a pepperoni pizza and a can of coke please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 17
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get a small pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get a small pizza with onions peppers and olives",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 44
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i get an extra large canadian pizza with half ground beef and half chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 9,
+                        "length": 69
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i order 2 large canadian pizzas and can i add chicken on one of them please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 12,
+                        "length": 61
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i order a small cheese pizza and a medium sausage and mushroom pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 62
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i please order a large meatlovers pizza but without ground beef please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 19,
+                        "length": 48
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "can i please place an order for an extra large hawaiian pizza including bacon pineapple and some cheddar cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 32,
+                        "length": 79
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "cancel",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "cancel it i dont want it anymore",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "cancel it please",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "cancel my order",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "cancel order",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "cancel that order",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "cancel the order",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "confirm",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "confirming",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "correct",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "could i get a large sheet pizza and do half with pepperoni and the other just cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 11,
+                        "length": 73
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "could i get a pepperoni pizza with salami instead and a ham and pineapple pizza with bacon instead of ham",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 12,
+                        "length": 37
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 54,
+                        "length": 51
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "could i get a pizza that's half pepperoni sausage and onion and the other half with just plain cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 12,
+                        "length": 89
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "delivery for a small pepperoni pizza with parsley and parmesan cheese plus a garlic dip paying cash",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 13,
+                        "length": 56
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "delivery order for a large cheese pizza with ham and olives and a side of cheese dip",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 19,
+                        "length": 40
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "dont make my order anymore",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "dont want the order anymore",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "get me a bbq pizza without cheese and an extra large pepperoni pizza with peppers olives and ham and a salad on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 26
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 37,
+                        "length": 59
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "get me a cheddar cheese pizza large with extra anchovies",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 49
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "get me a large napoli pizza and add extra anchovies remove the cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 62
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "get me a medium hand tossed pizza with mushrooms on half of it and pepperoni on the other half",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 87
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "get me a pepperoni pizza without pepperoni please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 35
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "get me one monaco pizza but hold the ham",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 33
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "get me three pepperoni pizzas without onions but add bacon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 51
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "give me a white castle pizza without any peppers",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 8,
+                        "length": 40
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "go ahead",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "hello",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "hello i would like to order a large hawaiian pizza with extra cheese black olives and extra pepperoni",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 28,
+                        "length": 73
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hello i'd like to order 6 medium pizzas for our office party two canadian two veggie and two meatlovers",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 61,
+                        "length": 12
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 74,
+                        "length": 10
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 89,
+                        "length": 14
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hey",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "hey again",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "hey can i get a small pizza with pepperoni and extra cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 14,
+                        "length": 45
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hey i want to order a large pepperoni pizza without mushrooms add extra chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 20,
+                        "length": 59
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hey i want to order a large supreme pizza add cheese no onions plus a large pepperoni pizza with sausage",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 20,
+                        "length": 42
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 67,
+                        "length": 37
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hey there",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "hi",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "hi can i order a large pizza with pepperoni bacon and extra chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 15,
+                        "length": 52
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hi dear team i would order a medium margherita pizza add extra pepper ham and ranch",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 27,
+                        "length": 56
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hi i need to place an order for a large cheese pizza with extra cheese and mushrooms and bacon toppings",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 32,
+                        "length": 71
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hi i want a medium veggie pizza with bacon added to one side and the other half add chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 10,
+                        "length": 81
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hi we want a large seafood pizza one half no mushrooms one half extra onions",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 11,
+                        "length": 65
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "hii",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "hiiiii",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "how are you",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need 2 large cheese pizzas 6 large pepperoni pizzas and 1 large supreme pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 21
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 29,
+                        "length": 24
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 58,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a chicken pizza without mushroom and a large pepperoni pizza extra anchovies and some bread sticks",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 9,
+                        "length": 30
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 44,
+                        "length": 39
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large ham pizza extra bacon and corn the payment will be in cash",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 38
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large meat lovers pizza with extra sausage cheese and bacon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 61
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large pepperoni with bell peppers and black olives and a small grilled chicken with bacon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 52
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 63,
+                        "length": 35
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large pizza with alfredo sauce and one with cheddar cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 32
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 44,
+                        "length": 23
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large pizza with alfredo sauce instead of the pizza sauce",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 59
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large pizza with extra jalapenos one with half pineapples and one with light onions",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 85
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large pizza without ham add extra pineapple",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 45
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a large sausage and mushroom pizza and a large coke",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 34
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a medium cheese pizza add mushrooms and onions and one chicken pizza needs peppers and sausage",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 46
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 58,
+                        "length": 43
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a medium thin crust pepperoni pizza with bacon and grilled onions with a side of cheesy bread sticks",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 65
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need a pepperoni sausage and mushroom pizza and please leave off the cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 70
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need five pizzas with pepperoni onions green peppers and green olives on one of them",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 79
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need to order one large plain cheese pizza a small pepperoni pizza bread sticks and onion rings",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 16,
+                        "length": 28
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 45,
+                        "length": 23
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need twelve large pizzas with various toppings for a business meeting at noon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 41
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i need two small chicken pizzas stuffed crust with extra salami bacon ham on half and without olives and a side of garlic knots",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 93
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a himalyan pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 16
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a large meat lover's pizza with ham and sausage with garlic sticks on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 47
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a medium cheese pizza with onions a small pizza with olives and a large pizza with mushrooms",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 33
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 41,
+                        "length": 25
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 71,
+                        "length": 28
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a medium hawaiian pizza with pineapple canadian bacon and extra cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 70
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a pepperoni large with extra anchovies but remove cheese olives and mushroom",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 76
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a small pepperoni pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 23
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want a supreme pizza but i do not want the sausage on it",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 51
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want four hawaiian pizzas but i do not want jalapenos on it",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 54
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want one large chicken ranch pizza with extra muhsroom but without ham and garlic knots on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 65
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want six cheesy pizzas",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 17
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want three cheese pizzas",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 19
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want three cuban pizzas with bacon and mushrooms and fries on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 43
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want to order a chicken pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 16,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want to order a large clam pizza extra white sauce and a side order of garlic knots to go",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 16,
+                        "length": 36
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want to order a medium cheese pizza and a root beer",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 16,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want to order a pizza with olives on one half and green peppers on the other half",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 16,
+                        "length": 67
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want to order an icelandic pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 16,
+                        "length": 18
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want to order an individual pizza with salami and extra mushrooms replace paprika with corn",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 16,
+                        "length": 77
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want two medium chicken pizzas with anchovies",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 40
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i want two pepperoni pizzas",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 7,
+                        "length": 20
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i would like a large vegetarian pizza half onions half peppers",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 13,
+                        "length": 49
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i would like a medium pizza with extra mushrooms and light sausage but remove the cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 13,
+                        "length": 75
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "i would like a pepperoni pizza with extra cheese and a side of ranch",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 13,
+                        "length": 35
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "id like to order a large pizza with extra pepperoni extra chicken and extra cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 17,
+                        "length": 65
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "looks alright",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "looks fine by me",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "looks good",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "looks good to me",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "looks right",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "make sure that my order is cancelled",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "one medium pepperoni and one side of macaroni and cheese please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 0,
+                        "length": 20
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "one medium pepperoni replace the anchovies with olives",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 0,
+                        "length": 54
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "order a medium stuffed crust pizza that has pineapple canadian bacon and onions on it",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 6,
+                        "length": 79
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "order a pepperoni pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 6,
+                        "length": 17
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "order one chicken pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 6,
+                        "length": 17
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "order one mandarin pizza thin crust with extra pineapple anchovies onions and without peppers and fries on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 6,
+                        "length": 88
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "order one pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 6,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "please order twelve chelsea pizzas but i do not want ham on them",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 13,
+                        "length": 51
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "please order two pan crust small pepperoni pizza with beef and three medium cheese pizza with italian sausage",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 13,
+                        "length": 46
+                    },
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 63,
+                        "length": 46
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "pretty much",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "request seven large honolulu hawaiian pizza with bacon and salami and add chicken wings",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaOrder",
+                        "offset": 8,
+                        "length": 58
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "right",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "that's great",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "yes",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "yes order it",
+                "intent": "None",
+                "entities": [],
+                "dataset": "Train"
+            }
+        ]
+    }
+}
