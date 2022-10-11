@@ -3,11 +3,13 @@
 
 const { ConversationAnalysisClient } = require("@azure/ai-language-conversations");
 const { AzureKeyCredential } = require("@azure/core-auth");
+const { CluValidator } = require("./cluValidator");
 
 class CluRecognizer
 {            
     constructor(options)
     {
+        this.validate(options);
         this.conversationsClient = new ConversationAnalysisClient(options.endpoint, new AzureKeyCredential(options.endpointKey));
         this.options = options;
         this.CluTraceLabel = "CLU Trace";
@@ -16,7 +18,11 @@ class CluRecognizer
     async recognizeAsync(turnContext)
     {
         var utterance = turnContext.activity.text;
-        console.log("Utterance is: " + utterance);
+        return await this.recognizeInternalAsync(utterance, turnContext);        
+    }
+
+    async recognizeInternalAsync(utterance, turnContext)
+    {
         var request =
         {
             analysisInput:
@@ -44,37 +50,10 @@ class CluRecognizer
         return cluResponse;
     }
 
-    async recognizeInternalAsync(utterance, turnContext)
-    {
-        console.log("Utterance received");
-        var request =
-        {
-            analysisInput:
-            {
-                conversationItem:
-                {
-                    text: utterance,
-                    id: "1",
-                    participantId: "1",
-                }
-            },
-            parameters:
-            {
-                projectName: _options.CluApplication.ProjectName,
-                deploymentName: _options.CluApplication.DeploymentName,
-
-                // Use Utf16CodeUnit for strings in .NET.
-                stringIndexType: "Utf16CodeUnit",
-            },
-            kind: "Conversation",
-        };
-
-        var cluResponse = await _conversationsClient.analyzeConversation(request);
-
-        var traceInfo = { response: cluResponse };
-
-        await turnContext.sendTraceActivity("CLU Recognizer", traceInfo, CluTraceLabel);
-        return cluResponse;
+    validate(options){
+        const {endpoint, endpointKey, projectName, deploymentName } = options;
+        const validator = new CluValidator();
+        validator.validate(projectName, deploymentName, endpointKey, endpoint);
     }
 }
 

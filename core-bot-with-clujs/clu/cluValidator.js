@@ -1,40 +1,42 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-class CluApplication
+class CluValidator
 {
-        constructor(projectName, deploymentName, endpointKey, endpoint){
+    constructor(){}
+
+        validate(projectName, deploymentName, endpointKey, endpoint){
             this.projectName = projectName;
             this.deploymentName = deploymentName;
             this.endpointKey = endpointKey;
             this.endpoint = endpoint;
 
-            if (isNullOrWhitespace(projectName))
+            if (this.isNullOrWhitespace(projectName))
             {
                 throw new ArgumentNullException("projectName value is Null or whitespace. Please use a valid projectName.");
             }
 
-            if (isNullOrWhitespace(deploymentName))
+            if (this.isNullOrWhitespace(deploymentName))
             {
                 throw new ArgumentException("deploymentName value is Null or whitespace. Please use a valid deploymentName.");
             }
 
-            if (isNullOrWhitespace(endpointKey))
+            if (this.isNullOrWhitespace(endpointKey))
             {
                 throw new ArgumentException("endpointKey value is Null or whitespace. Please use a valid endpointKey.");
             }
 
-            if (isNullOrWhitespace(endpoint))
+            if (this.isNullOrWhitespace(endpoint))
             {
                 throw new ArgumentException("Endpoint value is Null or whitespace. Please use a valid endpoint.");
             }
 
-            if (!tryParse(endpointKey))
+            if (!this.tryParse(endpointKey))
             {
                 throw new ArgumentException("\"{endpointKey}\" is not a valid CLU subscription key.");
             }
 
-            if (!isWellFormedUriString(endpoint))
+            if (!this.isWellFormedUriString(endpoint))
             {
                 throw new ArgumentException("\"{endpoint}\" is not a valid CLU endpoint.");
             }
@@ -45,7 +47,7 @@ class CluApplication
         }
 
         tryParse( key ){
-            var pattern = new RegExp('^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$', 'i');
+            var pattern = new RegExp('^[0-9a-f]{32}', 'i');
             return pattern.test(key);
         }
 
@@ -60,4 +62,4 @@ class CluApplication
         }
 }
 
-module.exports.CluApplication = CluApplication;
+module.exports.CluValidator = CluValidator;
