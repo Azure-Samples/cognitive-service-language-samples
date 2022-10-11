@@ -1,0 +1,4113 @@
+{
+    "projectFileVersion": "2022-05-01",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0.7
+        },
+        "projectName": "MicrosoftPizzaSmall",
+        "multilingual": false,
+        "description": "",
+        "language": "en-us"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "CancelOrder"
+            },
+            {
+                "category": "Confirmation"
+            },
+            {
+                "category": "Greetings"
+            },
+            {
+                "category": "ModifyOrder"
+            },
+            {
+                "category": "None"
+            }
+        ],
+        "entities": [
+            {
+                "category": "FullPizzaWithModifiers.PizzaType",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "FullPizzaWithModifiers.Size",
+                "compositionSetting": "requireExactOverlap",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Extra Large",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "XL",
+                                        "huge",
+                                        "super big",
+                                        "massive",
+                                        "Extra Large"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Large",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "large",
+                                        "Large"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Medium",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "medium",
+                                        "regular",
+                                        "individual",
+                                        "Medium"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Party Size",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "party size",
+                                        "Party Size"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Small",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "small",
+                                        "smallest",
+                                        "Small"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "FullPizzaWithModifiers.Quantity",
+                "compositionSetting": "requireExactOverlap",
+                "prebuilts": [
+                    {
+                        "category": "Quantity.Number"
+                    }
+                ]
+            },
+            {
+                "category": "FullPizzaWithModifiers.Crust",
+                "compositionSetting": "requireExactOverlap",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Deep Dish",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "deep dish",
+                                        "deep dish crust",
+                                        "Deep Dish"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Pan",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "regular",
+                                        "normal",
+                                        "original",
+                                        "regular crust",
+                                        "normal crust",
+                                        "original crust",
+                                        "pan crust",
+                                        "Pan"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Stuffed Crust",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "stuffed criust",
+                                        "stuffed crusts",
+                                        "stuffed crust",
+                                        "Stuffed Crust"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Thin",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "thin",
+                                        "skinny",
+                                        "thin crust",
+                                        "skinny crust",
+                                        "Thin"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "ToppingModifiers.Topping",
+                "compositionSetting": "requireExactOverlap",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Alfredo Sauce",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "alfredo",
+                                        "alfredo sauce",
+                                        "white sauce",
+                                        "Alfredo Sauce"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "All",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "everything",
+                                        "various toppings",
+                                        "All"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Anchovies",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "anchovie",
+                                        "anchovies",
+                                        "Anchovies"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Artichokes",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "artichokes",
+                                        "artichoke",
+                                        "artichockes",
+                                        "Artichokes"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Bacon",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "bacon",
+                                        "bacon strips",
+                                        "Bacon"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Banana Pepper",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "yellow peppers",
+                                        "yellow pepper",
+                                        "banana pepper",
+                                        "banana peppers",
+                                        "Banana Pepper"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Barbecue",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "BBQ",
+                                        "barbeque",
+                                        "barbecue",
+                                        "Barbecue"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Basil",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "basil",
+                                        "basils",
+                                        "Basil"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Beef",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "beef",
+                                        "ground beef",
+                                        "meat",
+                                        "hamburger",
+                                        "Beef"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Broccoli",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "broccoli",
+                                        "Broccoli"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Canadian Bacon",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "canadian bacon",
+                                        "canada bacon",
+                                        "Canadian Bacon"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Cheddar",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "cheddar",
+                                        "cheddar cheese",
+                                        "Cheddar"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Cheese",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "cheeses",
+                                        "cheese",
+                                        "Cheese"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Chicken",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "chicken",
+                                        "chickens",
+                                        "grilled chicken",
+                                        "Chicken"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Corn",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "corn",
+                                        "Corn"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Dip",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Dip"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Eggplant",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "eggplant",
+                                        "eggplants",
+                                        "Eggplant"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Everything",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "various toppings",
+                                        "everything",
+                                        "works",
+                                        "the works",
+                                        "Everything"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Garlic",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "garlic",
+                                        "garlics",
+                                        "Garlic"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Green Olive",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "green olive",
+                                        "green olives",
+                                        "Green Olive"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Ham",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "ham",
+                                        "Ham"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Hot Sauce",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "hot sauce",
+                                        "Hot Sauce"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Jalapeno",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Jalapenos",
+                                        "jalapeno",
+                                        "jalapeno peppers",
+                                        "jalapeno pepper",
+                                        "spicy peppers",
+                                        "Jalapeno"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Lettuce",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "lettuce",
+                                        "Lettuce"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Meatballs",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "meatball",
+                                        "meatballs",
+                                        "Meatballs"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Mozzarella",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "mozzarella",
+                                        "mozzarella cheese",
+                                        "mozzerella",
+                                        "mozzerella cheese",
+                                        "mozarela cheese",
+                                        "mozarela",
+                                        "mozzaralla ranch",
+                                        "mozzerella ranch",
+                                        "Mozzarella"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Mushroom",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Mushrooms",
+                                        "mushroom",
+                                        "muhsroom",
+                                        "Mushroom"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Olive",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "olive",
+                                        "black olive",
+                                        "black olives",
+                                        "olives",
+                                        "Olive"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Onions",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "onion",
+                                        "onions",
+                                        "grilled onions",
+                                        "Onions"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Oregano",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "oregano",
+                                        "oreganos",
+                                        "Oregano"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Parmesan Cheese",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "parmesan cheese",
+                                        "parmisan cheese",
+                                        "parmesan",
+                                        "Parmesan Cheese"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Pepperoni",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "pepperoni",
+                                        "pepperonis",
+                                        "peperoni",
+                                        "Pepperoni"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Peppers",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "green peppers",
+                                        "green pepper",
+                                        "pepper",
+                                        "peppers",
+                                        "Peppers"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Pesto",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "pesto",
+                                        "pesto sauce",
+                                        "Pesto"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Pineapple",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "pineapple",
+                                        "pineapples",
+                                        "Pineapple"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Ranch",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "ranch",
+                                        "ranch sauce",
+                                        "Ranch"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Red Peppers",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "red pepper",
+                                        "red peppers",
+                                        "Red Peppers"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Salami",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "salami",
+                                        "salamis",
+                                        "Salami"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Sauce",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "sauce",
+                                        "red sauce",
+                                        "red sauces",
+                                        "pizza sauce",
+                                        "Sauce"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Sausage",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "italian sausage",
+                                        "sausage",
+                                        "sausages",
+                                        "Sausage"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Spinach",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "spinach",
+                                        "Spinach"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Sun Dried Tomato",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "sun-dried tomato",
+                                        "Sun Dried Tomato"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Tomato",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "tomato",
+                                        "tomatos",
+                                        "tomatoes",
+                                        "Tomato"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Turkey",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "turkey",
+                                        "Turkey"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Zuccini",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "zuccinis",
+                                        "zuccini",
+                                        "Zuccini"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "ToppingModifiers.Modifier",
+                "compositionSetting": "requireExactOverlap",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Add",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "with",
+                                        "with extra",
+                                        "extra",
+                                        "add",
+                                        "more of",
+                                        "needs",
+                                        "just",
+                                        "replaced with",
+                                        "with some",
+                                        "Add"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Remove",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "without",
+                                        "substitute",
+                                        "no",
+                                        "hold",
+                                        "hold the",
+                                        "replace",
+                                        "instead of",
+                                        "with no",
+                                        "leave off",
+                                        "not want",
+                                        "dont want",
+                                        "except",
+                                        "Remove"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "ToppingModifiers.Scope",
+                "compositionSetting": "requireExactOverlap",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Half",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "on half",
+                                        "on one half",
+                                        "the other half",
+                                        "half with",
+                                        "on one side",
+                                        "one side",
+                                        "1/2",
+                                        "on the other half",
+                                        "other half",
+                                        "the other",
+                                        "half",
+                                        "Half"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Half And Half",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "half and half",
+                                        "half & half",
+                                        "Half And Half"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "On One",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "on one",
+                                        "on one of them",
+                                        "On One"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "SideOrder.SideProduct",
+                "compositionSetting": "combineComponents"
+            }
+        ],
+        "utterances": [
+            {
+                "text": "a cheese pizza medium with some pineapple and chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 15,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 22,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 32,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 46,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "add 5 party size marinera pizzas and i will pick them up at 6pm",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 4,
+                        "length": 1
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 6,
+                        "length": 10
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 17,
+                        "length": 15
+                    }
+                ]
+            },
+            {
+                "text": "awesome",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "can i get 3 pepperoni pizzas and a four cheese pizza with a large house salad and a large fries",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 10,
+                        "length": 1
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 12,
+                        "length": 16
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 35,
+                        "length": 17
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 58,
+                        "length": 19
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 82,
+                        "length": 13
+                    }
+                ]
+            },
+            {
+                "text": "can i get a large veggie pizza but can i get it without onions",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 12,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 18,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 48,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 56,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "can i get a medium cheese pizza with sausage on half and chicken on the other half",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 12,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 19,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 32,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 37,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 45,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 57,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 65,
+                        "length": 17
+                    }
+                ]
+            },
+            {
+                "text": "can i get a medium pepperoni pizza with extra cheese and mushrooms plus some ranch dip for delivery paying cash",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 12,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 19,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 35,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 46,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 57,
+                        "length": 9
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 77,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "can i get a medium sausage pizza and fries delivered",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 12,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 19,
+                        "length": 13
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 37,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "can i get a pepperoni pizza and a can of coke please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 12,
+                        "length": 15
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 41,
+                        "length": 4
+                    }
+                ]
+            },
+            {
+                "text": "can i get a small pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 12,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 18,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "can i get a small pizza with onions peppers and olives",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 12,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 18,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 24,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 29,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 36,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 48,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "can i get an extra large canadian pizza with half ground beef and half chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 13,
+                        "length": 11
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 25,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 40,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 45,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 50,
+                        "length": 11
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 66,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 71,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "can i order 2 large canadian pizzas and can i add chicken on one of them please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 12,
+                        "length": 1
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 14,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 20,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 46,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 50,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 61,
+                        "length": 11
+                    }
+                ]
+            },
+            {
+                "text": "can i order a small cheese pizza and a medium sausage and mushroom pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 14,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 20,
+                        "length": 12
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 39,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 46,
+                        "length": 26
+                    }
+                ]
+            },
+            {
+                "text": "can i please order a large meatlovers pizza but without ground beef please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 21,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 27,
+                        "length": 16
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 48,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 56,
+                        "length": 11
+                    }
+                ]
+            },
+            {
+                "text": "can i please place an order for an extra large hawaiian pizza including bacon pineapple and some cheddar cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 35,
+                        "length": 11
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 47,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 62,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 72,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 78,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 97,
+                        "length": 14
+                    }
+                ]
+            },
+            {
+                "text": "cancel",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "cancel it i dont want it anymore",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "cancel it please",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "cancel my order",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "cancel order",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "cancel that order",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "cancel the order",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "confirm",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "confirming",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "correct",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "could i get a large sheet pizza and do half with pepperoni and the other just cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 14,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 20,
+                        "length": 11
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 39,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 49,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 63,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 78,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "could i get a pepperoni pizza with salami instead and a ham and pineapple pizza with bacon instead of ham",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 14,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 30,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 35,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 54,
+                        "length": 25
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 80,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 85,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 91,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 102,
+                        "length": 3
+                    }
+                ]
+            },
+            {
+                "text": "could i get a pizza that's half pepperoni sausage and onion and the other half with just plain cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 14,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 27,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 32,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 42,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 54,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 64,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 95,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "delivery for a small pepperoni pizza with parsley and parmesan cheese plus a garlic dip paying cash",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 15,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 21,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 37,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 42,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 54,
+                        "length": 15
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 77,
+                        "length": 10
+                    }
+                ]
+            },
+            {
+                "text": "delivery order for a large cheese pizza with ham and olives and a side of cheese dip",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 21,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 27,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 40,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 45,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 53,
+                        "length": 6
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 74,
+                        "length": 10
+                    }
+                ]
+            },
+            {
+                "text": "dont make my order anymore",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "dont want the order anymore",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "get me a bbq pizza without cheese and an extra large pepperoni pizza with peppers olives and ham and a salad on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 19,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 27,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 41,
+                        "length": 11
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 53,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 69,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 74,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 82,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 93,
+                        "length": 3
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 103,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "get me a cheddar cheese pizza large with extra anchovies",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 20
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 30,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 36,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 47,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "get me a large napoli pizza and add extra anchovies remove the cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 32,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 42,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 52,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 63,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "get me a medium hand tossed pizza with mushrooms on half of it and pepperoni on the other half",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 16,
+                        "length": 17
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 34,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 39,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 49,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 67,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 77,
+                        "length": 17
+                    }
+                ]
+            },
+            {
+                "text": "get me a pepperoni pizza without pepperoni please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 25,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 33,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "get me one monaco pizza but hold the ham",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 11,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 28,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 37,
+                        "length": 3
+                    }
+                ]
+            },
+            {
+                "text": "get me three pepperoni pizzas without onions but add bacon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 13,
+                        "length": 16
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 30,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 38,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 49,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 53,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "give me a white castle pizza without any peppers",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 10,
+                        "length": 18
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 29,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 41,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "go ahead",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "hello",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "hello i would like to order a large hawaiian pizza with extra cheese black olives and extra pepperoni",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 30,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 36,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 51,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 62,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 69,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 86,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 92,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "hello i'd like to order 6 medium pizzas for our office party two canadian two veggie and two meatlovers",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 24,
+                        "length": 1
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 26,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 33,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 61,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 65,
+                        "length": 8
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 74,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 78,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 89,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 93,
+                        "length": 10
+                    }
+                ]
+            },
+            {
+                "text": "hey",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "hey again",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "hey can i get a small pizza with pepperoni and extra cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 16,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 22,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 28,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 33,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 47,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 53,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "hey i want to order a large pepperoni pizza without mushrooms add extra chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 22,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 28,
+                        "length": 15
+                    }
+                ]
+            },
+            {
+                "text": "hey i want to order a large supreme pizza add cheese no onions plus a large pepperoni pizza with sausage",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 22,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 28,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 42,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 46,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 53,
+                        "length": 2
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 56,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 70,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 76,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 92,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 97,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "hey there",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "hi",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "hi can i order a large pizza with pepperoni bacon and extra chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 17,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 23,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 29,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 34,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 44,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 54,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 60,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "hi dear team i would order a medium margherita pizza add extra pepper ham and ranch",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 29,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 36,
+                        "length": 16
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 53,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 63,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 70,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 78,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "hi i need to place an order for a large cheese pizza with extra cheese and mushrooms and bacon toppings",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 34,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 40,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 53,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 64,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 75,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 89,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "hi i want a medium veggie pizza with bacon added to one side and the other half add chicken",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 12,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 19,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 32,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 37,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 52,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 65,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 80,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 84,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "hi we want a large seafood pizza one half no mushrooms one half extra onions",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 13,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 19,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 33,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 42,
+                        "length": 2
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 45,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 55,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 64,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 70,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "hii",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "hiiiii",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "how are you",
+                "intent": "Greetings",
+                "entities": []
+            },
+            {
+                "text": "i need 2 large cheese pizzas 6 large pepperoni pizzas and 1 large supreme pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 1
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 13
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 29,
+                        "length": 1
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 31,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 37,
+                        "length": 16
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 58,
+                        "length": 1
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 60,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 66,
+                        "length": 13
+                    }
+                ]
+            },
+            {
+                "text": "i need a chicken pizza without mushroom and a large pepperoni pizza extra anchovies and some bread sticks",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 23,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 31,
+                        "length": 8
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 46,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 52,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 68,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 74,
+                        "length": 9
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 93,
+                        "length": 12
+                    }
+                ]
+            },
+            {
+                "text": "i need a large ham pizza extra bacon and corn the payment will be in cash",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 25,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 31,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 41,
+                        "length": 4
+                    }
+                ]
+            },
+            {
+                "text": "i need a large meat lovers pizza with extra sausage cheese and bacon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 17
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 33,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 44,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 52,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 63,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "i need a large pepperoni with bell peppers and black olives and a small grilled chicken with bacon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 25,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 30,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 47,
+                        "length": 12
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 66,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 72,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 88,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 93,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "i need a large pizza with alfredo sauce and one with cheddar cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 21,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 26,
+                        "length": 13
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 44,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 48,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 53,
+                        "length": 14
+                    }
+                ]
+            },
+            {
+                "text": "i need a large pizza with alfredo sauce instead of the pizza sauce",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 21,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 26,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 40,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 55,
+                        "length": 11
+                    }
+                ]
+            },
+            {
+                "text": "i need a large pizza with extra jalapenos one with half pineapples and one with light onions",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 21,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 32,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 51,
+                        "length": 4
+                    }
+                ]
+            },
+            {
+                "text": "i need a large pizza without ham add extra pineapple",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 21,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 29,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 33,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 43,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "i need a large sausage and mushroom pizza and a large coke",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 26
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 54,
+                        "length": 4
+                    }
+                ]
+            },
+            {
+                "text": "i need a medium cheese pizza add mushrooms and onions and one chicken pizza needs peppers and sausage",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 16,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 29,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 33,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 47,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 58,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 62,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 76,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 82,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 94,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "i need a medium thin crust pepperoni pizza with bacon and grilled onions with a side of cheesy bread sticks",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Crust",
+                        "offset": 16,
+                        "length": 10
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 27,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 43,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 48,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 58,
+                        "length": 14
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 88,
+                        "length": 19
+                    }
+                ]
+            },
+            {
+                "text": "i need a pepperoni sausage and mushroom pizza and please leave off the cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 40,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 57,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 71,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "i need five pizzas with pepperoni onions green peppers and green olives on one of them",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 4
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 12,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 19,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 24,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 34,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 41,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 59,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 72,
+                        "length": 14
+                    }
+                ]
+            },
+            {
+                "text": "i need to order one large plain cheese pizza a small pepperoni pizza bread sticks and onion rings",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 16,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 20,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 26,
+                        "length": 18
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 47,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 53,
+                        "length": 15
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 69,
+                        "length": 12
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 86,
+                        "length": 11
+                    }
+                ]
+            },
+            {
+                "text": "i need twelve large pizzas with various toppings for a business meeting at noon",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 14,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 20,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 27,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 32,
+                        "length": 16
+                    }
+                ]
+            },
+            {
+                "text": "i need two small chicken pizzas stuffed crust with extra salami bacon ham on half and without olives and a side of garlic knots",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 11,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 17,
+                        "length": 14
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Crust",
+                        "offset": 32,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 46,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 57,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 64,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 70,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 74,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 86,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 94,
+                        "length": 6
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 115,
+                        "length": 12
+                    }
+                ]
+            },
+            {
+                "text": "i want a himalyan pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 14
+                    }
+                ]
+            },
+            {
+                "text": "i want a large meat lover's pizza with ham and sausage with garlic sticks on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 18
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 34,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 39,
+                        "length": 3
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 47,
+                        "length": 7
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 60,
+                        "length": 13
+                    }
+                ]
+            },
+            {
+                "text": "i want a medium cheese pizza with onions a small pizza with olives and a large pizza with mushrooms",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 16,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 29,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 34,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 43,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 49,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 55,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 60,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 73,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 79,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 85,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 90,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "i want a medium hawaiian pizza with pineapple canadian bacon and extra cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 16,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 31,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 36,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 46,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 65,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 71,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "i want a pepperoni large with extra anchovies but remove cheese olives and mushroom",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 9
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 19,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 25,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 36,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 50,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 57,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 64,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 75,
+                        "length": 8
+                    }
+                ]
+            },
+            {
+                "text": "i want a pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "i want a small pepperoni pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 9,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 15
+                    }
+                ]
+            },
+            {
+                "text": "i want a supreme pizza but i do not want the sausage on it",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 9,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 32,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 45,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "i want four hawaiian pizzas but i do not want jalapenos on it",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 4
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 12,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 37,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 46,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "i want one large chicken ranch pizza with extra muhsroom but without ham and garlic knots on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 11,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 17,
+                        "length": 19
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 37,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 48,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 61,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 69,
+                        "length": 3
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 77,
+                        "length": 12
+                    }
+                ]
+            },
+            {
+                "text": "i want six cheesy pizzas",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 11,
+                        "length": 13
+                    }
+                ]
+            },
+            {
+                "text": "i want three cheese pizzas",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 13,
+                        "length": 13
+                    }
+                ]
+            },
+            {
+                "text": "i want three cuban pizzas with bacon and mushrooms and fries on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 13,
+                        "length": 12
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 26,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 31,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 41,
+                        "length": 9
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 55,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "i want to order a chicken pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 18,
+                        "length": 13
+                    }
+                ]
+            },
+            {
+                "text": "i want to order a large clam pizza extra white sauce and a side order of garlic knots to go",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 18,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 24,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 35,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 41,
+                        "length": 11
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 73,
+                        "length": 12
+                    }
+                ]
+            },
+            {
+                "text": "i want to order a medium cheese pizza and a root beer",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 18,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 25,
+                        "length": 12
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 44,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "i want to order a pizza with olives on one half and green peppers on the other half",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 16,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 24,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 29,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 36,
+                        "length": 11
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 52,
+                        "length": 13
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 66,
+                        "length": 17
+                    }
+                ]
+            },
+            {
+                "text": "i want to order an icelandic pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 19,
+                        "length": 15
+                    }
+                ]
+            },
+            {
+                "text": "i want to order an individual pizza with salami and extra mushrooms replace paprika with corn",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 19,
+                        "length": 10
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 30,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 36,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 41,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 58,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 76,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 84,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 89,
+                        "length": 4
+                    }
+                ]
+            },
+            {
+                "text": "i want two medium chicken pizzas with anchovies",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 11,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 18,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 33,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 38,
+                        "length": 9
+                    }
+                ]
+            },
+            {
+                "text": "i want two pepperoni pizzas",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 7,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 11,
+                        "length": 16
+                    }
+                ]
+            },
+            {
+                "text": "i would like a large vegetarian pizza half onions half peppers",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 15,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 21,
+                        "length": 16
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 38,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 43,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Scope",
+                        "offset": 50,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 55,
+                        "length": 7
+                    }
+                ]
+            },
+            {
+                "text": "i would like a medium pizza with extra mushrooms and light sausage but remove the cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 15,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 22,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 28,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 39,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 59,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 71,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 82,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "i would like a pepperoni pizza with extra cheese and a side of ranch",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 15,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 31,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 42,
+                        "length": 6
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 63,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "id like to order a large pizza with extra pepperoni extra chicken and extra cheese",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 19,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 25,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 31,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 42,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 58,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 70,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 76,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "looks alright",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "looks fine by me",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "looks good",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "looks good to me",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "looks right",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "make sure that my order is cancelled",
+                "intent": "CancelOrder",
+                "entities": []
+            },
+            {
+                "text": "one medium pepperoni and one side of macaroni and cheese please",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 0,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 4,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 11,
+                        "length": 9
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 37,
+                        "length": 19
+                    }
+                ]
+            },
+            {
+                "text": "one medium pepperoni replace the anchovies with olives",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 0,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 4,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 11,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 21,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 33,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 43,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 48,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "order a medium stuffed crust pizza that has pineapple canadian bacon and onions on it",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 8,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Crust",
+                        "offset": 15,
+                        "length": 13
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 29,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 44,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 54,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 73,
+                        "length": 6
+                    }
+                ]
+            },
+            {
+                "text": "order a pepperoni pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 8,
+                        "length": 15
+                    }
+                ]
+            },
+            {
+                "text": "order one chicken pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 6,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 10,
+                        "length": 13
+                    }
+                ]
+            },
+            {
+                "text": "order one mandarin pizza thin crust with extra pineapple anchovies onions and without peppers and fries on the side",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 6,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 10,
+                        "length": 14
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Crust",
+                        "offset": 25,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 36,
+                        "length": 10
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 47,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 57,
+                        "length": 9
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 67,
+                        "length": 6
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 78,
+                        "length": 7
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 86,
+                        "length": 7
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 98,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "order one pizza",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 6,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 10,
+                        "length": 5
+                    }
+                ]
+            },
+            {
+                "text": "please order twelve chelsea pizzas but i do not want ham on them",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 13,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 20,
+                        "length": 14
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 44,
+                        "length": 8
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 53,
+                        "length": 3
+                    }
+                ]
+            },
+            {
+                "text": "please order two pan crust small pepperoni pizza with beef and three medium cheese pizza with italian sausage",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 13,
+                        "length": 3
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Crust",
+                        "offset": 17,
+                        "length": 9
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 27,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 33,
+                        "length": 15
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 49,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 54,
+                        "length": 4
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 63,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 69,
+                        "length": 6
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 76,
+                        "length": 12
+                    }
+                ]
+            },
+            {
+                "text": "pretty much",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "request seven large honolulu hawaiian pizza with bacon and salami and add chicken wings",
+                "intent": "ModifyOrder",
+                "entities": [
+                    {
+                        "category": "FullPizzaWithModifiers.Quantity",
+                        "offset": 8,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.Size",
+                        "offset": 14,
+                        "length": 5
+                    },
+                    {
+                        "category": "FullPizzaWithModifiers.PizzaType",
+                        "offset": 20,
+                        "length": 23
+                    },
+                    {
+                        "category": "ToppingModifiers.Modifier",
+                        "offset": 44,
+                        "length": 4
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 49,
+                        "length": 5
+                    },
+                    {
+                        "category": "ToppingModifiers.Topping",
+                        "offset": 59,
+                        "length": 6
+                    },
+                    {
+                        "category": "SideOrder.SideProduct",
+                        "offset": 70,
+                        "length": 17
+                    }
+                ]
+            },
+            {
+                "text": "right",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "that's great",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "yes",
+                "intent": "Confirmation",
+                "entities": []
+            },
+            {
+                "text": "yes order it",
+                "intent": "Confirmation",
+                "entities": []
+            }
+        ]
+    }
+}
