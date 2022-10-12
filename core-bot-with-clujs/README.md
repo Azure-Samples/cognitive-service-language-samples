@@ -40,6 +40,8 @@ CluAPIHostName="Your CLU App region here (i.e: westus.api.cognitive.microsoft.co
 
 # To run the bot
 
+Navigate to the directory containing this readme file and perform the following:
+
 - Install modules
 
     ```bash

@@ -24,7 +24,7 @@ const {
     UserState
 } = require('botbuilder');
 
-const { FlightBookingRecognizer } = require('./dialogs/flightBookingRecognizer');
+const { FlightBookingRecognizer } = require('./recognizer/flightBookingRecognizer');
 
 // This bot's main dialog.
 const { DialogAndWelcomeBot } = require('./bots/dialogAndWelcomeBot');
