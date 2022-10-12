@@ -2,10 +2,12 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Azure;
 using Azure.AI.Language.Conversations;
+using Azure.Core;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.TraceExtensions;
 using Newtonsoft.Json.Linq;
@@ -45,9 +47,7 @@ namespace Microsoft.BotBuilderSamples.Clu
             // for mocking purposes
             _conversationsClient = conversationAnalysisClient ?? new ConversationAnalysisClient(
                 new Uri(options.CluApplication.Endpoint),
-                new AzureKeyCredential(options.CluApplication.EndpointKey),
-                new ConversationAnalysisClientOptions(options.ApiVersion)
-            );
+                new AzureKeyCredential(options.CluApplication.EndpointKey)            );
             _options = options;
         }
 
@@ -73,21 +73,38 @@ namespace Microsoft.BotBuilderSamples.Clu
 
         private async Task<RecognizerResult> RecognizeInternalAsync(string utterance, ITurnContext turnContext, CancellationToken cancellationToken)
         {
-            var analyzeConversationOptions = new AnalyzeConversationOptions(_options.CluApplication.ProjectName, _options.CluApplication.DeploymentName, utterance)
+
+            var request = new
             {
-                Verbose = _options.Verbose,
-                Language = _options.Language,
-                IsLoggingEnabled = _options.IsLoggingEnabled,
-                DirectTarget = _options.DirectTarget
+                analysisInput = new
+                {
+                    conversationItem = new
+                    {
+                        text = utterance,
+                        id = "1",
+                        participantId = "1",
+                    }
+                },
+                parameters = new
+                {
+                    projectName = _options.CluApplication.ProjectName,
+                    deploymentName = _options.CluApplication.DeploymentName,
+
+                    // Use Utf16CodeUnit for strings in .NET.
+                    stringIndexType = "Utf16CodeUnit",
+                },
+                kind = "Conversation",
             };
 
-            var cluResponse = await _conversationsClient.AnalyzeConversationAsync(analyzeConversationOptions, cancellationToken);
-            var recognizerResult = RecognizerResultBuilder.BuildRecognizerResultFromCluResponse(cluResponse.Value, utterance);
+
+            var cluResponse = await _conversationsClient.AnalyzeConversationAsync(RequestContent.Create(request));
+            using JsonDocument result = JsonDocument.Parse(cluResponse.ContentStream);
+            var recognizerResult = RecognizerResultBuilder.BuildRecognizerResultFromCluResponse(result, utterance);
 
             var traceInfo = JObject.FromObject(
                 new
                 {
-                    response = cluResponse,
+                    response = result,
                     recognizerResult,
                 });
 
