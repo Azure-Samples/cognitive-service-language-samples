@@ -1,12 +1,11 @@
-# CoreBotWithCLUJS
+# CoreBot With CLU for JavaScript
 
-Bot Framework v4 core bot sample using CLU
+Bot Framework v4 core bot sample using the CLU Recognizer.
 
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to:
+This bot has been created using [Bot Framework](https://dev.botframework.com); it shows how to:
 
-- Use [LUIS](https://www.luis.ai) to implement core AI capabilities
+- Use [CLU][CLU_ServiceDocHomepage] to implement core AI capabilities
 - Implement a multi-turn conversation using Dialogs
-- Handle user interruptions for such things as `Help` or `Cancel`
 - Prompt for and validate requests for information from the user
 
 ## Prerequisites
@@ -15,7 +14,9 @@ This sample **requires** prerequisites in order to run.
 
 ### Overview
 
-This bot uses [LUIS](https://www.luis.ai), an AI based cognitive service, to implement language understanding.
+This bot uses [Conversational Language Understanding (CLU)][CLU_ServiceDocHomepage], an AI based cognitive service, to implement language understanding. The service uses natively multilingual models, which means that users would be able to train their models in one language but predict in others. Users of the service have access to the [language studio][languagestudio], which simplifies the process of adding/importing data, labelling it, training a model, and then finally evaluating it. For more information, visit the official [service docs][CLU_ServiceDocHomepage].
+
+### Install NodeJS
 
 - [Node.js](https://nodejs.org) version 10.14.1 or higher
 
@@ -24,16 +25,17 @@ This bot uses [LUIS](https://www.luis.ai), an AI based cognitive service, to imp
     node --version
     ```
 
-### Create a LUIS Application to enable language understanding
+### Create a Conversational Language Understanding Application
 
-The LUIS model for this example can be found under `cognitiveModels/FlightBooking.json` and the LUIS language model setup, training, and application configuration steps can be found [here](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&tabs=javascript).
+The CLU model for this example can be found under `cognitiveModels/FlightBooking.json` and the CLU language model setup, training, and application configuration steps can be found [here](https://learn.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/tutorials/bot-framework).
 
-Once you created the LUIS model, update `.env` with your `LuisAppId`, `LuisAPIKey` and `LuisAPIHostName`.
+Once you created the CLU model, update `.env` with your `CluProjectName`, `CluDeploymentName`, `CluAPIKey` and `CluAPIHostName`.
 
 ```text
-LuisAppId="Your LUIS App Id"
-LuisAPIKey="Your LUIS Subscription key here"
-LuisAPIHostName="Your LUIS App region here (i.e: westus.api.cognitive.microsoft.com)"
+CluProjectName="Your CLU project name"
+CluDeploymentName="Your CLU deployment name"
+CluAPIKey="Your CLU Subscription key here"
+CluAPIHostName="Your CLU App region here (i.e: westus.api.cognitive.microsoft.com)"
 ```
 
 # To run the bot
@@ -43,9 +45,9 @@ LuisAPIHostName="Your LUIS App region here (i.e: westus.api.cognitive.microsoft.
     ```bash
     npm install
     ```
-- Setup LUIS
+- Setup CLU
 
-The prerequisite outlined above contain the steps necessary to provision a language understanding model on www.luis.ai.  Refer to _Create a LUIS Application to enable language understanding_ above for directions to setup and configure LUIS.
+The prerequisite outlined above contain the steps necessary to provision a conversational language understanding model.
 
 - Start the bot
 
@@ -84,3 +86,7 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
 - [Restify](https://www.npmjs.com/package/restify)
 - [dotenv](https://www.npmjs.com/package/dotenv)
+
+[CLU_ServiceDocHomepage]: https://docs.microsoft.com/azure/cognitive-services/language-service/conversational-language-understanding/overview
+[CLU_ServiceQuickStart]: https://docs.microsoft.com/azure/cognitive-services/language-service/conversational-language-understanding/quickstart
+[languagestudio]: https://language.azure.com/
