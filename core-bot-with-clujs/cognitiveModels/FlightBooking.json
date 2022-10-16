@@ -1,0 +1,626 @@
+{
+  "api-version": "2022-05-15-preview",
+  "stringIndexType": "Utf16CodeUnit",
+  "metadata": {
+      "projectKind": "conversation",
+      "settings": {
+          "confidenceThreshold": 0
+      },
+      "projectName": "FlightBooking",
+      "multilingual": false,
+      "description": "CLU Model for CoreBot",
+      "language": "en-us"
+  },
+  "assets": {
+      "intents": [
+          {
+              "category": "BookFlight"
+          },
+          {
+              "category": "Cancel"
+          },
+          {
+              "category": "GetWeather"
+          },
+          {
+              "category": "None"
+          }
+      ],
+      "entities": [
+          {
+              "category": "toCity",
+              "compositionSetting": "returnUnion"
+          },
+          {
+              "category": "fromCity",
+              "compositionSetting": "returnUnion"
+          },
+          {
+              "category": "flightDate",
+              "compositionSetting": "returnUnion",
+              "prebuilts": [
+                  {
+                      "category": "DateTime"
+                  }
+              ]
+          }
+      ],
+      "utterances": [
+          {
+              "text": "a flight to Washington from Cairo",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 12,
+                      "length": 10
+                  },
+                  {
+                      "category": "fromCity",
+                      "offset": 28,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "a ticket to Shanghai from Tokyo",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 12,
+                      "length": 8
+                  },
+                  {
+                      "category": "fromCity",
+                      "offset": 26,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "To Tokyo from Cairo",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 3,
+                      "length": 5
+                  },
+                  {
+                      "category": "fromCity",
+                      "offset": 14,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "To London from Paris",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 3,
+                      "length": 6
+                  },
+                  {
+                      "category": "fromCity",
+                      "offset": 15,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "from Cairo to Barcelona",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 5,
+                      "length": 5
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 14,
+                      "length": 9
+                  }
+              ]
+          },
+          {
+              "text": "On the third week of February",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "flightDate",
+                      "offset": 7,
+                      "length": 22
+                  }
+              ]
+          },
+          {
+              "text": "to New Delhi",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 3,
+                      "length": 9
+                  }
+              ]
+          },
+          {
+              "text": "the source city is New Delhi",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 19,
+                      "length": 9
+                  }
+              ]
+          },
+          {
+              "text": "the destination city is Cairo",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 24,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "to London",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 3,
+                      "length": 6
+                  }
+              ]
+          },
+          {
+              "text": "Book a flight on the first of October",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "flightDate",
+                      "offset": 21,
+                      "length": 16
+                  }
+              ]
+          },
+          {
+              "text": "Book a flight from Barcelona to London",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 19,
+                      "length": 9
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 32,
+                      "length": 6
+                  }
+              ]
+          },
+          {
+              "text": "I want a flight on the second of December 2022 ",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "flightDate",
+                      "offset": 23,
+                      "length": 23
+                  }
+              ]
+          },
+          {
+              "text": "flight from London",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 12,
+                      "length": 6
+                  }
+              ]
+          },
+          {
+              "text": "ticket to New York",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 10,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "I want to book a flight from Cairo to Shanghai on 22/12/2021",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 29,
+                      "length": 5
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 38,
+                      "length": 8
+                  },
+                  {
+                      "category": "flightDate",
+                      "offset": 50,
+                      "length": 10
+                  }
+              ]
+          },
+          {
+              "text": "buy a ticket from new york to london",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 18,
+                      "length": 8
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 30,
+                      "length": 6
+                  }
+              ]
+          },
+          {
+              "text": "buy a ticket from paris to cairo",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 18,
+                      "length": 5
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 27,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "buy a ticket from cairo to new york",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 18,
+                      "length": 5
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 27,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "book a flight from paris to london",
+              "language": "en-us",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 19,
+                      "length": 5
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 28,
+                      "length": 6
+                  }
+              ]
+          },
+          {
+              "text": "book a flight",
+              "intent": "BookFlight",
+              "entities": []
+          },
+          {
+              "text": "book a flight from new york",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 19,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "book a flight from seattle",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 19,
+                      "length": 7
+                  }
+              ]
+          },
+          {
+              "text": "book a hotel in new york",
+              "intent": "None",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 16,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "book a restaurant",
+              "intent": "None",
+              "entities": []
+          },
+          {
+              "text": "book flight from london to paris on feb 14th",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 17,
+                      "length": 6
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 27,
+                      "length": 5
+                  },
+                  {
+                      "category": "flightDate",
+                      "offset": 36,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "book flight to berlin on feb 14th",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 15,
+                      "length": 6
+                  },
+                  {
+                      "category": "flightDate",
+                      "offset": 25,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "book me a flight from london to paris",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 22,
+                      "length": 6
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 32,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "bye",
+              "intent": "Cancel",
+              "entities": []
+          },
+          {
+              "text": "cancel booking",
+              "intent": "Cancel",
+              "entities": []
+          },
+          {
+              "text": "exit",
+              "intent": "Cancel",
+              "entities": []
+          },
+          {
+              "text": "find an airport near me",
+              "intent": "None",
+              "entities": []
+          },
+          {
+              "text": "flight to paris",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 10,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "flight to paris from london on feb 14th",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 10,
+                      "length": 5
+                  },
+                  {
+                      "category": "fromCity",
+                      "offset": 21,
+                      "length": 6
+                  },
+                  {
+                      "category": "flightDate",
+                      "offset": 31,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "fly from berlin to paris on may 5th",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 9,
+                      "length": 6
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 19,
+                      "length": 5
+                  },
+                  {
+                      "category": "flightDate",
+                      "offset": 28,
+                      "length": 7
+                  }
+              ]
+          },
+          {
+              "text": "go to paris",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 6,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "going from paris to berlin",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 11,
+                      "length": 5
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 20,
+                      "length": 6
+                  }
+              ]
+          },
+          {
+              "text": "i'd like to rent a car",
+              "intent": "None",
+              "entities": []
+          },
+          {
+              "text": "ignore",
+              "intent": "Cancel",
+              "entities": []
+          },
+          {
+              "text": "travel from new york to paris",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 12,
+                      "length": 8
+                  },
+                  {
+                      "category": "toCity",
+                      "offset": 24,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "travel to new york",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 10,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "travel to paris",
+              "intent": "BookFlight",
+              "entities": [
+                  {
+                      "category": "toCity",
+                      "offset": 10,
+                      "length": 5
+                  }
+              ]
+          },
+          {
+              "text": "what's the forecast for this friday?",
+              "intent": "GetWeather",
+              "entities": []
+          },
+          {
+              "text": "what's the weather like for tomorrow",
+              "intent": "GetWeather",
+              "entities": []
+          },
+          {
+              "text": "what's the weather like in new york",
+              "intent": "GetWeather",
+              "entities": [
+                  {
+                      "category": "fromCity",
+                      "offset": 27,
+                      "length": 8
+                  }
+              ]
+          },
+          {
+              "text": "what's the weather like?",
+              "intent": "GetWeather",
+              "entities": []
+          },
+          {
+              "text": "winter is coming",
+              "intent": "None",
+              "entities": []
+          }
+      ]
+  }
+}

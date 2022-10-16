@@ -13,6 +13,7 @@ This project hosts **samples** for [Cognitive Service for Language](https://docs
 
 | Sample | Description |
 | ---------- | -------- | 
-| [CoreBotWithCLU](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/CoreBotWithCLU) | A sample demonstrating Conversational language understanding integration with the Bot Framework SDK. |
+| [CoreBotWithCLU](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/CoreBotWithCLU) | A sample demonstrating Conversational language understanding integration with the Bot Framework SDK for .NET. |
+| [core-bot-with-clujs](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/core-bot-with-clujs) | A sample demonstrating Conversational language understanding integration with the Bot Framework SDK for JavaScript. |
 | [OrchestrationWorkflowSample](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/OrchestrationWorkflowSample) | A sample demonstrating an Orchestration workflow solution integration with the Conversations SDK.  |
 | [CLU-Pizza-Samples](https://github.com/Azure-Samples/cognitive-service-language-samples/tree/main/CLU-Pizza-Samples) | Sample JSON files showcasing one method to replace structured entities from LUIS in CLU.  |
