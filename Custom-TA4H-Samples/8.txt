@@ -1,0 +1,7 @@
+PROTOCOL ENTRY CRITERIA:
+
+Participant must have documented diagnosis with celiac disease (CeD) by duodenal/jejunal biopsy prior to entrance into the study.
+Participant must be on a gluten-free diet (GFD) for at least the past 12 months.
+Female participants must not be a woman of childbearing potential (WOCBP), pregnant or breastfeeding.
+Participant must have anti-tissue transglutaminase (anti-tTG) <2x upper limit of normal (ULN) as measured by serology.
+Participant must have a body mass index (BMI) 18-35 kg/m2, inclusive. The patient will undergo treatment at Contoso center.
