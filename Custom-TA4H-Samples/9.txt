@@ -1,0 +1,10 @@
+Inclusion Criteria:
+
+- Diagnosis of early-onset Alzheimer's disease based on the NIA-AA diagnostic criteria as determined by the clinician. (Those patients with severe dementia due to Alzheimer's disease or who have impaired decisional capacity, may participate only if their legally authorized representative gives their consent.)
+- Male and female patients ≥40 and ≤65 years of age.
+- Parents and siblings of the participant with Alzheimer's disease. Medical attention will be  provided to the patients by Contoso center.
+
+Exclusion Criteria:
+
+- Family history of early or late-onset Alzheimer's disease.
+- Uncontrolled concurrent illness including psychiatric illness or situations that would limit compliance with the study requirements or the ability to willingly give written or verbal informed consent.

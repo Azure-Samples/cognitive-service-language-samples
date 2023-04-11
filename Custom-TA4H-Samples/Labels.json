@@ -1,0 +1,255 @@
+{
+    "projectFileVersion": "2023-04-15-preview",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "CustomHealthcare",
+        "storageInputContainerName": "customhealthquickstart",
+        "settings": {
+            "confidenceThreshold": 0
+        },
+        "projectName": "quickstart",
+        "multilingual": true,
+        "description": "",
+        "language": "en"
+    },
+    "assets": {
+        "projectKind": "CustomHealthcare",
+        "entities": [
+            {
+                "compositionSetting": "combineComponents",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Contoso clinics",
+                            "synonyms": [
+                                {
+                                    "language": "en",
+                                    "values": [
+                                        "Contosa",
+                                        "Contosito",
+                                        "Contosita"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "category": "TreatmentLocation"
+            }
+        ],
+        "documents": [
+            {
+                "location": "1.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 0,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "10.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 175,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "2.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 0,
+                                "length": 16
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "3.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 417,
+                                "length": 16
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "4.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 43,
+                                "length": 24
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "5.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 43,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "6.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 44,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "7.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 15,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "8.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 572,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "9.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 512,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "location": "Test 1.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 35,
+                                "length": 14
+                            },
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 286,
+                                "length": 16
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Test"
+            },
+            {
+                "location": "Test 2.txt",
+                "language": "en",
+                "entities": [
+                    {
+                        "labels": [
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 44,
+                                "length": 14
+                            },
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 228,
+                                "length": 14
+                            },
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 335,
+                                "length": 14
+                            },
+                            {
+                                "category": "TreatmentLocation",
+                                "offset": 403,
+                                "length": 14
+                            }
+                        ]
+                    }
+                ],
+                "dataset": "Test"
+            }
+        ]
+    }
+}

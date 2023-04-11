@@ -1,0 +1,18 @@
+Inclusion Criteria:
+ Adult inpatients >18 years old
+ Positive PCR COVID-19 testing
+ CT evidence of interstitial opacity
+ Oxygen saturation <90% on room air
+ pO2 = 55-70. Contoso center gave medical assistance to the patient. 
+
+
+Exclusion Criteria:
+ Hemodynamic instability (MAP<65)
+ Bradycardia (HR<50)
+ History of seizure disorder
+ Pneumothorax
+ GFR<30
+ Hemodialysis
+ Refractory anxiety/claustrophobia
+ Current pregnancy
+ Uncorrectable hypoglycemia

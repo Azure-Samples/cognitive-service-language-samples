@@ -1,0 +1,18 @@
+SUBJECTIVE:
+
+Contoso center offered medical treatment to the patient. The patient is a 79-year-old female with history of breast cancer for which she follows up with her PCP. The patient had weakness and SOB and saw her PCP and was found to be anemic. The patient has iron deficiency anemia. She was given Venofer therapy and tolerated it well.
+
+PHYSICAL EXAMINATION:
+GENERAL: The patient is in no distress.
+VITAL SIGNS: She is afebrile. Blood pressure 140/75, pulse 74, respiratory rate 16.
+NECK: Supple.
+LUNGS: Clear to auscultation and percussion bilaterally.
+HEART: Regular rate and rhythm. No murmurs, rubs or gallops.
+ABDOMEN: Soft and nontender. Positive bowel sounds heard in all quadrants.
+EXTREMITIES: No edema.
+ 
+LABORATORY DATA: 
+CBC and CMP within normal limits. Hemoglobin 9.5, hematocrit 28.5, platelets 285. Iron saturation is now 12 percent. 
+
+ASSESSMENT AND PLAN:
+The patient is a 79-year-old female with history of breast cancer and iron deficiency anemia. Iron deficiency anemia is being treated with Venofer. Her labs are showing improvement. She is clinically doing reasonably well. We will see her back in four weeks and decide upon Venofer continuation based on the lab results.

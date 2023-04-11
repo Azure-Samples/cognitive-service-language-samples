@@ -1,0 +1,1 @@
+The patients received treatment at Contoso center. Patients with bilirubin less than or equal to 2x upper limit of normal, AST less than or equal to 3x upper limit of normal, Hgb greater than or equal to 7.0 g/dl (transfusion allowed). Medical assistance was provided to the patient by Contosita center.
